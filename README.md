@@ -22,7 +22,9 @@ SimplyTrueFoods is designed to showcase a complete snack brand experience, from 
 
 ## 🚀 Live Demo
 
+- **Live Link**: https://simply-true-foods-pekm.vercel.app/
 - **Repository**: https://github.com/sakshu3606/SimplyTrueFoods
+- **Portfolio**: https://portfolio-sakshiparate.vercel.app/
 
 ## 🛠️ Tech Stack
 
@@ -260,9 +262,10 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## 👨‍💻 Developer
 
-**[Your Name]**
+**Sakshi Mahendra Parate**
 - GitHub: [@sakshu3606](https://github.com/sakshu3606)
 - LeetCode: https://leetcode.com/u/s_parate/
+- HackerRank: https://www.hackerrank.com/profile/sakshiparate305
 - LinkedIn: https://www.linkedin.com/in/sakshi-parate-b78330255/
 - Email: sakshiparate305@gmail.com
 
