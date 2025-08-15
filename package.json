@@ -14,7 +14,6 @@
     "@angular/animations": "20.1.7",
     "@angular/cdk": "20.1.6",
     "@angular/common": "20.1.7",
-    "@angular/compiler": "20.1.7",
     "@angular/core": "20.1.7",
     "@angular/forms": "20.1.7",
     "@angular/material": "20.1.6",
@@ -33,7 +32,8 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "20.1.6",
     "@angular/cli": "20.1.5",
-    "@angular/compiler-cli": "20.1.6",
+    "@angular/compiler": "^20.1.7",
+    "@angular/compiler-cli": "^20.1.7",
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
