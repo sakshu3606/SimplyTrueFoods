@@ -246,9 +246,6 @@ The website is deployed using GitHub Pages:
   - Best Practices: 85/100
   - SEO: 88/100
 
-- **Page Load Time**: [Add your metrics]
-- **Bundle Size**: [Add bundle analysis]
-
 ## 🤝 Contributing
 
 1. Fork the repository
