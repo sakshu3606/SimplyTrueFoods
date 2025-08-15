@@ -1,0 +1,281 @@
+/* ---------------------------
+   Base Styles & Animations
+----------------------------*/
+.home-container {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fffaf3;
+  color: #333;
+  font-size: 1.05rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* ---------------------------
+   Navbar
+----------------------------*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  animation: slideUp 0.8s ease;
+}
+.navbar .logo img {
+  height: 55px;
+  transition: transform 0.3s ease;
+}
+.navbar .logo img:hover {
+  transform: scale(1.05);
+}
+.navbar nav {
+  display: flex;
+  gap: 2rem;
+}
+.navbar nav a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.navbar nav a.active,
+.navbar nav a:hover {
+  color: #f9a825;
+  transform: scale(1.05);
+}
+
+/* ---------------------------
+   Hero Section
+----------------------------*/
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem;
+  gap: 3rem;
+  animation: slideUp 1s ease;
+}
+.hero .hero-text {
+  flex: 1;
+}
+.hero .hero-text .subtitle {
+  color: #f9a825;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+.hero .hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #4a8a2f;
+}
+.hero .hero-text h1 .highlight {
+  color: #f9a825;
+}
+.hero .hero-text .description {
+  margin-top: 1rem;
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.hero .buttons,
+.cards-section .buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.hero .button,
+.cards-section .button {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.85rem 1.8rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.btn.primary {
+  background: #f9a825;
+  color: white;
+}
+.btn.primary:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(249, 168, 37, 0.3);
+  background: #4a8a2f;
+}
+.btn.secondary {
+  background: transparent;
+  border: 2px solid #4a8a2f;
+  color: #4a8a2f;
+}
+.btn.secondary:hover {
+  background: #f9a825;
+  border: 2px solid #f9a825;
+  color: white;
+  transform: scale(1.05);
+}
+/* Ripple Effect */
+.btn::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.btn:active::after {
+  transform: scale(2);
+  opacity: 1;
+}
+
+/* ---------------------------
+   Features & Tags
+----------------------------*/
+.features {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 1rem;
+}
+.tags {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.tags span {
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  background: #f0f0f0;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.tags span:hover {
+  background: #e2e2e2;
+  transform: scale(1.05);
+}
+
+/* ---------------------------
+   Hero Image
+----------------------------*/
+.hero-image {
+  flex: 1;
+  position: relative;
+}
+.hero-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
+}
+.hero-image img:hover {
+  transform: scale(1.03);
+}
+.hero-image .rating {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ---------------------------
+   Cards Section
+----------------------------*/
+.cards-section {
+  padding: 4rem;
+  background: #fff;
+  text-align: center;
+  animation: fadeIn 1.2s ease;
+}
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #4a8a2f;
+}
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  animation: slideUp 0.8s ease;
+}
+.card img {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #f0f0f0;
+  transition: transform 0.35s ease;
+}
+.card:hover img {
+  transform: scale(1.08);
+}
+.card h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem;
+  color: #333;
+}
+.card p {
+  font-size: 1rem;
+  color: #555;
+  padding: 0 1rem 1.5rem;
+}
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* Existing styles above remain same */
+
+/* Meal of the Day button */
+.btn.meal {
+  background: #f9a825;
+  color: white;
+}
+.btn.meal:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(249, 168, 37, 0.3);
+  background: #4a8a2f;
+}
+
+/* Pulse effect already exists in your code */

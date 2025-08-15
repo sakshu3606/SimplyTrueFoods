@@ -1,0 +1,150 @@
+<!-- Font Awesome CDN - Add this to your index.html if not already present -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="container">
+      
+      <!-- Main Footer Content -->
+      <div class="footer-main">
+        
+        <!-- Company Info Section -->
+        <div class="footer-section company-info">
+          <div class="footer-logo">
+            <div class="logo-icon">
+              <svg width="50" height="50" viewBox="0 0 50 50">
+                <path d="M25 5c-11.046 0-20 8.954-20 20s8.954 20 20 20 20-8.954 20-20-8.954-20-20-20z" fill="#4CAF50"/>
+                <path d="M18 22c0-3.866 3.134-7 7-7s7 3.134 7 7v10c0 2.209-1.791 4-4 4h-6c-2.209 0-4-1.791-4-4v-10z" fill="#66BB6A"/>
+                <path d="M22 14c0-1.657 1.343-3 3-3s3 1.343 3 3v4h-6v-4z" fill="#81C784"/>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <span class="brand-name">Simply</span>
+              <span class="brand-tagline">True</span>
+            </div>
+          </div>
+          <p class="company-description">
+            Crafting wholesome snacks from farm to table with integrity and flavor.
+          </p>
+          
+          <!-- Social Links -->
+          <div class="social-links">
+            <a *ngFor="let social of socialLinks" 
+               (click)="openSocialLink(social.url)"
+               class="social-link"
+               [attr.aria-label]="social.name"
+               role="button"
+               tabindex="0">
+              <i [class]="social.icon" [attr.aria-hidden]="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li *ngFor="let link of quickLinks" class="footer-link-item">
+              <a (click)="navigateTo(link.route)" 
+                 class="footer-link"
+                 role="button"
+                 tabindex="0"
+                 [attr.aria-label]="'Navigate to ' + link.label">
+                {{ link.label }}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Our Snacks -->
+        <div class="footer-section">
+          <h3 class="footer-title">Our Snacks</h3>
+          <ul class="footer-links">
+            <li *ngFor="let category of snackCategories" class="footer-link-item">
+              <a (click)="navigateTo(category.route)" 
+                 class="footer-link"
+                 role="button"
+                 tabindex="0"
+                 [attr.aria-label]="'View ' + category.label">
+                {{ category.label }}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section contact-section">
+          <h3 class="footer-title">Contact Us</h3>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <span>{{ contactInfo.address }}</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <span>{{ contactInfo.phone }}</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span>{{ contactInfo.email }}</span>
+            </div>
+          </div>
+
+          <!-- Newsletter Signup -->
+          <div class="newsletter-signup">
+            <h4>Stay Updated</h4>
+            <form class="newsletter-form" (ngSubmit)="onNewsletterSubmit($event)" #newsletterForm="ngForm">
+              <div class="input-group">
+                <input 
+                  type="email" 
+                  placeholder="Enter your email"
+                  class="newsletter-input"
+                  [(ngModel)]="newsletterEmail"
+                  name="email"
+                  #emailInput="ngModel"
+                  required
+                  email
+                  aria-label="Email address for newsletter subscription">
+                <button 
+                  type="submit" 
+                  class="newsletter-btn"
+                  [disabled]="!newsletterForm.valid || !newsletterEmail"
+                  aria-label="Subscribe to newsletter">
+                  <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                </button>
+              </div>
+              
+              <!-- Error display -->
+              <div *ngIf="emailInput.invalid && emailInput.touched" class="error-message">
+                <small *ngIf="emailInput.errors?.['required']">Email is required</small>
+                <small *ngIf="emailInput.errors?.['email']">Please enter a valid email address</small>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-content">
+        <div class="copyright">
+          <p>&copy; {{ currentYear }} Simply True. All rights reserved.</p>
+        </div>
+        <div class="legal-links">
+          <a *ngFor="let link of legalLinks; let last = last"
+             (click)="navigateTo(link.route)" 
+             class="legal-link"
+             role="button"
+             tabindex="0"
+             [attr.aria-label]="'View ' + link.label">
+            {{ link.label }}
+            <span *ngIf="!last" class="separator">|</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

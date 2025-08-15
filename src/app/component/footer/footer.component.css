@@ -1,0 +1,500 @@
+.footer {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-content {
+  padding: 60px 0 40px;
+}
+
+.footer-content .footer-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 992px) {
+  .footer-content .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-content .footer-main {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+}
+
+.footer-section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.footer-section:nth-child(1) { animation-delay: 0.1s; }
+.footer-section:nth-child(2) { animation-delay: 0.2s; }
+.footer-section:nth-child(3) { animation-delay: 0.3s; }
+.footer-section:nth-child(4) { animation-delay: 0.4s; }
+
+.footer-section .footer-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #F4A261;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-section .footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 3px;
+  background: linear-gradient(90deg, #F4A261, #E76F51);
+  border-radius: 2px;
+}
+
+@media (max-width: 576px) {
+  .footer-section .footer-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Company Info Section */
+.company-info .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 576px) {
+  .company-info .footer-logo {
+    justify-content: center;
+  }
+}
+
+.company-info .footer-logo .logo-icon {
+  transition: transform 0.3s ease;
+}
+
+.company-info .footer-logo .logo-icon:hover {
+  transform: rotate(5deg) scale(1.05);
+}
+
+.company-info .footer-logo .logo-icon svg {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.company-info .footer-logo .logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.company-info .footer-logo .logo-text .brand-name {
+  font-family: 'Georgia', serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: -0.5px;
+}
+
+.company-info .footer-logo .logo-text .brand-tagline {
+  font-family: 'Georgia', serif;
+  font-size: 16px;
+  color: #F4A261;
+  font-style: italic;
+  margin-top: -2px;
+}
+
+.company-info .company-description {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 25px;
+  max-width: 300px;
+}
+
+@media (max-width: 576px) {
+  .company-info .company-description {
+    max-width: none;
+  }
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+@media (max-width: 576px) {
+  .social-links {
+    justify-content: center;
+  }
+}
+
+.social-links .social-link {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.social-links .social-link:hover {
+  background: rgba(244, 162, 97, 0.8);
+  border-color: #F4A261;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(244, 162, 97, 0.4);
+}
+
+.social-links .social-link i {
+  font-size: 18px;
+}
+
+/* Footer Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links .footer-link-item {
+  margin-bottom: 12px;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+.footer-links .footer-link-item:hover {
+  transform: translateX(5px);
+}
+
+.footer-links .footer-link-item .footer-link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-links .footer-link-item .footer-link::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: #F4A261;
+  transition: width 0.3s ease;
+}
+
+.footer-links .footer-link-item .footer-link:hover {
+  color: #F4A261;
+}
+
+.footer-links .footer-link-item .footer-link:hover::before {
+  width: 100%;
+}
+
+.footer-links .footer-link-item .footer-link:focus {
+  outline: 2px solid #F4A261;
+  outline-offset: 2px;
+}
+
+/* Contact Section */
+.contact-section .contact-info {
+  margin-bottom: 30px;
+}
+
+.contact-section .contact-info .contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 576px) {
+  .contact-section .contact-info .contact-item {
+    justify-content: center;
+    text-align: left;
+  }
+}
+
+.contact-section .contact-info .contact-item i {
+  color: #F4A261;
+  font-size: 16px;
+  margin-top: 2px;
+  min-width: 16px;
+}
+
+.contact-section .contact-info .contact-item span {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Newsletter Signup */
+.newsletter-signup h4 {
+  color: #F4A261;
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.newsletter-signup .newsletter-form .input-group {
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  padding: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.newsletter-signup .newsletter-form .input-group:focus-within {
+  border-color: #F4A261;
+  box-shadow: 0 0 20px rgba(244, 162, 97, 0.3);
+}
+
+.newsletter-signup .newsletter-form .input-group .newsletter-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 12px 20px;
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+.newsletter-signup .newsletter-form .input-group .newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter-signup .newsletter-form .input-group .newsletter-btn {
+  background: linear-gradient(45deg, #F4A261, #E76F51);
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(244, 162, 97, 0.4);
+}
+
+.newsletter-signup .newsletter-form .input-group .newsletter-btn:hover:not(:disabled) {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(244, 162, 97, 0.6);
+}
+
+.newsletter-signup .newsletter-form .input-group .newsletter-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.newsletter-signup .newsletter-form .input-group .newsletter-btn:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.newsletter-signup .newsletter-form .input-group .newsletter-btn i {
+  font-size: 16px;
+}
+
+/* Error Message */
+.error-message {
+  margin-top: 10px;
+  color: #ffcccb;
+  font-size: 14px;
+}
+
+.error-message small {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom .footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .footer-bottom .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.footer-bottom .footer-bottom-content .copyright {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+.footer-bottom .footer-bottom-content .copyright p {
+  margin: 0;
+}
+
+.footer-bottom .footer-bottom-content .legal-links {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-bottom .footer-bottom-content .legal-links .legal-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 5px 10px;
+}
+
+.footer-bottom .footer-bottom-content .legal-links .legal-link:hover {
+  color: #F4A261;
+}
+
+.footer-bottom .footer-bottom-content .legal-links .legal-link:focus {
+  outline: 2px solid #F4A261;
+  outline-offset: 2px;
+}
+
+.footer-bottom .footer-bottom-content .legal-links .separator {
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 5px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    padding: 40px 0 30px;
+  }
+  
+  .footer-section .footer-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .company-info .footer-logo .logo-text .brand-name {
+    font-size: 24px;
+  }
+  
+  .company-info .footer-logo .logo-text .brand-tagline {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    padding: 30px 0 20px;
+  }
+  
+  .footer-main {
+    gap: 25px;
+  }
+  
+  .newsletter-signup .newsletter-form .input-group {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 15px;
+  }
+  
+  .newsletter-signup .newsletter-form .input-group .newsletter-input {
+    padding: 15px 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .newsletter-signup .newsletter-form .input-group .newsletter-btn {
+    align-self: center;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .footer-section,
+  .footer-links .footer-link-item,
+  .social-links .social-link,
+  .newsletter-signup .newsletter-form .input-group .newsletter-btn {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .footer {
+    background: #000;
+  }
+  
+  .footer-section .footer-title,
+  .social-links .social-link:hover,
+  .footer-links .footer-link-item .footer-link:hover {
+    color: #fff;
+  }
+}

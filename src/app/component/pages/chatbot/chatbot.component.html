@@ -1,0 +1,25 @@
+<!-- Floating Chat Button -->
+<div class="chatbot-button" *ngIf="!isOpen" (click)="toggleChat()">
+  💬
+</div>
+
+<!-- Chat Window -->
+<div class="chatbot-container" *ngIf="isOpen" [@slideInUp]>
+  <div class="chatbot-header">
+    <span>💬 Chat with Us</span>
+    <button class="close-btn" (click)="toggleChat()">✖</button>
+  </div>
+
+  <div class="chatbot-body">
+    <div class="messages">
+      <div *ngFor="let msg of messages" [class.user]="msg.from === 'user'" [class.bot]="msg.from === 'bot'">
+        {{ msg.text }}
+      </div>
+    </div>
+
+    <div class="input-area">
+      <input type="text" [(ngModel)]="userMessage" placeholder="Type your message..." (keyup.enter)="sendMessage()" />
+      <button (click)="sendMessage()">➤</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,123 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  padding: 1rem 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.6s ease-out;
+}
+.site-header.scrolled {
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1.5rem;
+}
+.site-header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.site-header .logo img {
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+.site-header .logo span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2d5a27;
+}
+.site-header .logo span em {
+  color: #f59e0b;
+  font-style: italic;
+}
+.site-header .logo:hover img {
+  transform: scale(1.05) rotate(3deg);
+}
+.site-header nav.desktop-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+.site-header nav.desktop-nav a {
+  position: relative;
+  text-decoration: none;
+  color: #4b5563;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.site-header nav.desktop-nav a.active,
+.site-header nav.desktop-nav a:hover {
+  color: #2d5a27;
+}
+.site-header nav.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #f59e0b;
+  transition: width 0.3s ease;
+}
+.site-header nav.desktop-nav a:hover::after,
+.site-header nav.desktop-nav a.active::after {
+  width: 100%;
+}
+.site-header .menu-btn {
+  display: none;
+  background: none;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+.site-header .mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #fef7ed;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  padding: 1rem;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.site-header .mobile-nav.open {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+.site-header .mobile-nav a {
+  padding: 0.75rem 0;
+  color: #4b5563;
+  text-decoration: none;
+}
+.site-header .mobile-nav a:hover {
+  color: #2d5a27;
+}
+@media (max-width: 768px) {
+  .site-header nav.desktop-nav {
+    display: none;
+  }
+  .site-header .menu-btn {
+    display: block;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

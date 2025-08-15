@@ -1,0 +1,183 @@
+.contact-page {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fffdf8;
+  padding-bottom: 3rem;
+  color: #333;
+}
+
+/* Header (Hero) */
+.header {
+  background: linear-gradient(to bottom, #2e7d32, #2e7d32);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: white;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  max-width: 1100px;       /* inset look */
+  margin: 0 auto 2rem auto; /* center with margin below */
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.header h1 span {
+  color: #f4a300;
+}
+
+.header p {
+  margin-top: 0.8rem;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.95;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  display: flex;
+  gap: 2.5rem;
+  max-width: 1150px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Contact Info Cards */
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.info-card {
+  background: white;
+  padding: 1.3rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.info-card h3 {
+  color: #2e7d32;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.info-card a {
+  display: inline-block;
+  margin-top: 0.3rem;
+  color: #f4a300;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.info-card a:hover {
+  color: #e69500;
+}
+
+.info-card.social .icons a {
+  font-size: 1.5rem;
+  margin-right: 12px;
+  color: #2e7d32;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.info-card.social .icons a:hover {
+  color: #f4a300;
+  transform: scale(1.15);
+}
+
+/* Contact Form */
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.contact-form h2 {
+  color: #2e7d32;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46,125,50,0.15);
+  transform: scale(1.01);
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form button {
+  background: #f4a300;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #e69500;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(249, 168, 37, 0.3);
+}
+
+/* Form Fade-up Animation */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Map Section */
+.map-container {
+  max-width: 1150px;
+  margin: 2rem auto 0;
+  padding: 0 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}

@@ -1,0 +1,34 @@
+<section class="product-hero" [@fadeIn]>
+  <div class="tagline">Farm to Table Collection</div>
+  <h1>
+    Discover Our <span class="highlight">Premium</span> Snacks
+  </h1>
+  <p>
+    16+ varieties of wholesome snacks crafted from nature's finest ingredients.
+    Each product is made with care to deliver exceptional taste and nutrition.
+  </p>
+  <button class="story-btn" [@scaleOnHover]>Our Story</button>
+
+  <div class="product-icons" [@slideUp]>
+    <img src="snack1.jpeg" alt="Snack 1" />
+    <img src="snack2.jpeg" alt="Snack 2" />
+    <img src="snack3.jpg" alt="Snack 3" />
+  </div>
+</section>
+
+<section class="product-varieties" [@fadeIn]>
+  <h2>
+    Explore Our <span class="highlight">16+ Varieties</span>
+  </h2>
+  <p>
+    From classic favorites to innovative flavors, we have something for every taste
+  </p>
+
+  <div class="variety-grid">
+    <div class="variety-card" *ngFor="let item of products" [@cardFade]>
+      <img [src]="item.image" [alt]="item.name" />
+      <h3>{{ item.name }}</h3>
+    </div>
+  </div>
+  <button class="story-btn">Bulk Order Inquiry</button>
+</section>

@@ -1,0 +1,68 @@
+<div class="blog-container" [@fadeIn]>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>
+      <span class="green">Farm</span> <span class="orange">Stories</span>
+    </h1>
+    <p>
+      Discover the passion behind every bag - from sustainable farming to flavor innovation
+    </p>
+  </section>
+
+  <!-- Search and Category Filter -->
+  <div class="filter-container">
+    <div class="search-box">
+      <input
+        type="text"
+        placeholder="🔍 Search articles..."
+        [(ngModel)]="searchTerm"
+      />
+    </div>
+
+    <div class="dropdown">
+      <select [(ngModel)]="selectedCategory">
+        <option *ngFor="let category of categories">{{ category }}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Featured Title -->
+  <h2 class="featured-title">
+    <span class="green">Featured</span>   <span class="orange">Story</span>
+  </h2>
+
+  <!-- Stories Grid -->
+  <div class="stories-grid" [@listAnimation]>
+    <div class="story-card" *ngFor="let story of filteredStories">
+      <img [src]="story.image" [alt]="story.title" />
+      <div class="story-content">
+        <h3>{{ story.title }}</h3>
+        <p>{{ story.excerpt }}</p>
+        <button class="read-more">Continue Reading →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <button class="page-btn">←</button>
+    <button class="page-btn">1</button>
+    <button class="page-btn">2</button>
+    <button class="page-btn">3</button>
+    <button class="page-btn">4</button>
+    <button class="page-btn">→</button>
+  </div>
+
+  <!-- Stay Updated Section -->
+  <div class="stay-updated">
+    <h3>Stay Updated</h3>
+    <p>Get exclusive farm updates, new product announcements, and healthy snack tips</p>
+    <div class="subscribe-box">
+      <input type="email" placeholder="Enter your email" />
+      <button class="subscribe-btn">Subscribe</button>
+    </div>
+    <small>We respect your privacy. Unsubscribe at any time.</small>
+  </div>
+
+</div>

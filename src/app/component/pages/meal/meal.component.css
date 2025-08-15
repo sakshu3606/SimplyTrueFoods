@@ -1,0 +1,31 @@
+.meal-container {
+  text-align: center;
+  padding: 4rem;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fffaf3;
+}
+
+.meal-card {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  animation: slideUp 1s ease;
+}
+
+.meal-card img {
+  width: 100%;
+  display: block;
+}
+
+.meal-card h2 {
+  margin: 1rem 0;
+  color: #4a8a2f;
+}
+
+.meal-card p {
+  padding: 0 1rem 2rem;
+  color: #555;
+}

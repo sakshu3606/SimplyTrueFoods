@@ -1,0 +1,28 @@
+<header class="site-header" [class.scrolled]="isScrolled">
+  <div class="container">
+    <div class="logo">
+      <img src="icon.png" alt="Simply True Foods" />
+      <span>Simply <em>True</em></span>
+    </div>
+
+    <nav class="desktop-nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+      <a routerLink="/products" routerLinkActive="active">Products</a>
+      <a routerLink="/blog" routerLinkActive="active">Blog</a>
+      <a routerLink="/community" routerLinkActive="active">Community</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    </nav>
+
+    <button class="menu-btn" (click)="toggleMenu()">☰</button>
+  </div>
+
+  <div class="mobile-nav" [class.open]="menuOpen">
+    <a (click)="closeMenu()" routerLink="/">Home</a>
+    <a (click)="closeMenu()" routerLink="/about">About</a>
+    <a (click)="closeMenu()" routerLink="/products">Products</a>
+    <a (click)="closeMenu()" routerLink="/blog">Blog</a>
+    <a (click)="closeMenu()" routerLink="/community">Community</a>
+    <a (click)="closeMenu()" routerLink="/contact">Contact</a>
+  </div>
+</header>

@@ -1,0 +1,113 @@
+<div class="home-container" [@fadeIn]>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Simply True Logo" />
+    </div>
+    <nav>
+      <a class="active" href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Products</a>
+      <a href="#">Blog</a>
+      <a href="#">Community</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text" [@slideInLeft]>
+      <p class="subtitle">CRUNCHY & DELICIOUS</p>
+      <h1>
+        Farm-Fresh <span class="highlight">Snacks</span> for <br />
+        Every Occasion
+      </h1>
+      <p class="description">
+        Discover the authentic taste of nature with our handcrafted chips. <br /><br/>
+        At Crunchy Harvest, we believe snacks should be both delicious and nutritious.
+        Our small-batch chips are made from organic, non-GMO potatoes grown in
+        sustainable farms. Lightly seasoned with premium ingredients and cooked to
+        golden perfection for that perfect crunch you'll love.
+      </p>
+
+      <div class="buttons">
+        <button class="btn primary" (click)="goToProducts()">Explore Our Flavors</button>
+        <button class="btn secondary" (click)="goToAbout()">Meet Our Farmers</button>
+        <button class="btn meal" (click)="goToMeal()">Meal of the Day</button>
+      </div>
+
+      <div class="features">
+        <span>🌱 100% Organic</span>
+        <span>🚜 Locally Sourced</span>
+        <span>♻️ Eco-Friendly</span>
+        <span>🚫 No Artificial Flavors</span>
+      </div>
+
+      <div class="tags">
+        <span>Sea Salt</span>
+        <span>BBQ</span>
+        <span>Sour Cream</span>
+        <span>Spicy Jalapeño</span>
+        <span>Truffle</span>
+        <span>Vinegar</span>
+      </div>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="hero-image" [@slideInRight]>
+      <img src="home.png" alt="Fries in Mug" />
+      <div class="rating">⭐⭐⭐⭐⭐ 4.9/5</div>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="cards-section" [@fadeIn]>
+    <h2 class="section-title">Our Wholesome Snack Selection</h2>
+    <p class="description">
+      Discover our range of nutritious snacks crafted with care from farm-fresh ingredients. 
+      Each product is <br/>made to deliver maximum flavor with minimal processing.
+    </p>
+    <div class="cards-container">
+      <div class="card">
+        <img src="chips.jpg" alt="Classic Potato Chips" />
+        <h3>Classic Potato Chips</h3>
+        <p>Light, crispy, and sprinkled with premium sea salt.</p>
+      </div>
+      <div class="card">
+        <img src="chips2.jpeg" alt="Ridged Crunch Chips" />
+        <h3>Ridged Crunch Chips</h3>
+        <p>Smoky, sweet, and savory flavor that keeps you coming back.</p>
+      </div>
+      <div class="card">
+        <img src="chips3.jpg" alt="Tortilla Chips" />
+        <h3>Tortilla Chips</h3>
+        <p>A bold kick of spice balanced with a satisfying crunch.</p>
+      </div>
+      <div class="card">
+        <img src="chips4.jpeg" alt="Pita Chips" />
+        <h3>Pita Chips</h3>
+        <p>Mediterranean-inspired crunchy triangles.</p>
+      </div>
+      <div class="card">
+        <img src="chips5.jpeg" alt="Plantain Chips" />
+        <h3>Plantain Chips</h3>
+        <p>Sweet and savory tropical crunch.</p>
+      </div>
+      <div class="card">
+        <img src="chips6.jpg" alt="Cheese Crisps" />
+        <h3>Cheese Crisps</h3>
+        <p>Baked cheese snacks for low-carb lovers.</p>
+      </div>
+      <div class="card">
+        <img src="chips7.jpeg" alt="Multi-Grain Chips" />
+        <h3>Multi-Grain Chips</h3>
+        <p>Nutritious blend of ancient grains.</p>
+      </div>
+    </div>
+    <div class="button">
+      <button class="btn primary" (click)="goToProducts()">View All Products</button>
+    </div>
+  </section>
+
+</div>
